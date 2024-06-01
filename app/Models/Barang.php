@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Saade\FilamentAutograph\Forms\Components\SignaturePad;
+use Saade\FilamentAutograph\Forms\Components\Enums\DownloadableFormat;
 
 class Barang extends Model
 {
@@ -80,6 +82,16 @@ class Barang extends Model
                  ->label('Gambar')
                  ->columnSpanFull()
                  ->required(),
+            SignaturePad::make('signature')
+                ->filename('autograph')
+                ->downloadable()
+                ->downloadableFormats([             // Available formats for download (defaults to all)
+                    DownloadableFormat::PNG,
+                    DownloadableFormat::JPG,
+                    DownloadableFormat::SVG,
+                ])
+                ->downloadActionDropdownPlacement('center-end')
+                ->columnSpanFull()
         ];
     }
 }
