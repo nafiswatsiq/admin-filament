@@ -5,7 +5,7 @@ php artisan migrate
 ```
 php artisan shield:install
 ```
--yes Do you wish to continue? (yes/no) [yes]
+- yes Do you wish to continue? (yes/no) [yes]
 - Run `shield:install --fresh` instead? (yes/no) [no]
 - Name: (admin name)
 - Email address: (email admin)
